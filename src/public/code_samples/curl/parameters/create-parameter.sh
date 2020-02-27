@@ -1,0 +1,1 @@
+curl -H "X-API-Token: yourToken" -H "Content-Type: application/json" -X PUT https://rudder.example.com/rudder/api/latest/parameters -d @JSON-file-name

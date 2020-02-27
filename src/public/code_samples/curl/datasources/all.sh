@@ -1,0 +1,1 @@
+curl -H "X-API-Token: yourToken" -X GET 'https://rudder.example.com/rudder/api/latest/datasources'

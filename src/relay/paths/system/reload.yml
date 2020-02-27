@@ -9,6 +9,9 @@ post:
         application/json:
           schema:
             type: object
+            required:
+              - result
+              - action
             properties:
               result:
                 type: string
@@ -18,7 +21,7 @@ post:
                   - error
               action:
                 type: string
-                description: The operationId if the action
+                description: The operationId of the action
                 enum:
                   - getSystemInfo
   tags:

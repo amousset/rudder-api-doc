@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Change_Requests
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters: []
+delete:
+  tags:
+    - Change_Requests
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters: []
+post:
+  tags:
+    - Change_Requests
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - in: body
+      name: body
+      schema:
+        $ref: "#/definitions/updateChangeRequest"

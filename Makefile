@@ -1,17 +1,27 @@
-all: clean build/relay.html build/public-api
+API:=public relay
+build: $(API)
 
-build/public-api:
-	apidoc -v --config src/public-api -i src/public-api/endpoints -f ".*\\.md$$" -o $@ -t template
-
-build/relay/openapi.yml:
-	# openapi requires that the parent folder exist but not the target one...
+# Rebuild everything at each call as it is fast enough
+$(API):
 	mkdir -p build
-	rm -fr build/relay
-	openapi bundle src/relay/openapi.yml -o $@
+	# Needed for "openapi bundle" to work
+	rm -rf build/$@
+	# Build a single yaml file from sources
+	openapi bundle src/$@/openapi.yml --output build/$@/openapi.yml
+	# Build doc from yaml file (with pre-rendered html)
+	redoc-cli bundle --output build/$@/index.html build/$@/openapi.yml \
+		--disableGoogleFont \
+		--options.theme.colors.primary.main="#f08004" \
+		--options.expandResponses="200," \
+		--options.pathInMiddlePanel=1 \
+		--options.hideHostname=1
+	# Copy common assets
+	cp -r src/assets build/$@/
+	# Copy specific assets if any
+	if [ -d src/$@/assets ]; then cp -r src/$@/assets/. build/$@/assets; fi
 
-build/relay.html: build/relay/openapi.yml
-	redoc-cli bundle --disableGoogleFont --options.theme.colors.primary.main="#f08004" --options.expandResponses="200," --options.hideHostname=1 --output $@ $<
+optipng:
+	find src -name "*.png" -exec optipng {} \;
 
 clean:
 	rm -rf build
-

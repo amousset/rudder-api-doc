@@ -1,0 +1,1 @@
+curl -H "X-API-Token: yourToken" -X POST 'http://rudder.example.com/rudder/api/latest/groups/GroupID' -d "displayName=New name of group"

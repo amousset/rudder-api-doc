@@ -1,0 +1,1 @@
+curl -H "X-API-Token: yourToken" -X PUT 'https://rudder.example.com/rudder/api/latest/groups/categories' -d "name=new category name" -d "parent=4306143d-eabf-4478-b7b1-1616f4aa02b5" -d "description=A new category created via API'

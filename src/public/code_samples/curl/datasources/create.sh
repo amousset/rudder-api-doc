@@ -1,0 +1,1 @@
+curl -H "X-API-Token: yourToken" -X PUT http://rudder.example.com/rudder/api/latest/datasources -H "Content-type: application/json" -d @datasources.json

@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.0.3
 info:
   title: Rudder relay API
-  version: "1.0"
+  version: "1"
   description: >-
     Rudder relay exposes an internal API, enabling the agents and other services to interact with the relay.
 
@@ -63,7 +63,7 @@ info:
       }
     ```
   x-logo:
-    url: "https://docs.rudder.io/reference/6.0/_images/big-rudder-logo.png"
+    url: "assets/rudder.png"
   contact:
     email: dev@rudder.io
     name: Rudder developers

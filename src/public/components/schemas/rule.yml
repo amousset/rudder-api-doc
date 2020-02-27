@@ -1,0 +1,26 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid or "root"
+  displayName:
+  shortDescription:
+    type: string
+  longDescription:
+    type: string
+  directives:
+    type: array
+    items:
+      type: string
+      description: "directive id"
+  targets:
+    type: array
+    items:
+      type: string
+      description: "group id"
+  enabled:
+    type: boolean
+    example: true
+  system:
+    type: boolean
+    example: false

@@ -1,0 +1,22 @@
+post:
+  tags:
+    - Change requests
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: string
+  responses:
+    "200":
+      description: "Success"
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/change-request.yml
+  parameters:
+    - in: path
+      required: true
+      name: id
+      schema:
+        type: string

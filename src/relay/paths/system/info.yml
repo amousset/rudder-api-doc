@@ -18,14 +18,19 @@ get:
                   - error
               action:
                 type: string
-                description: The operationId if the action
+                description: The operationId of the action
                 enum:
                   - getSystemInfo
               data:
                 type: object
                 description: Information about the service
+                required:
+                  - rudder
                 properties:
                   rudder:
+                    required:
+                      - major-version
+                      - full-version
                     properties:
                       major-version:
                         type: string

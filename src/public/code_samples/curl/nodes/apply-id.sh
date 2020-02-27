@@ -1,0 +1,1 @@
+curl -H "X-API-Token: yourToken" -X POST  -H "Content-Type: application/json" https://rudder.example.com/rudder/api/latest/nodes/root/applyPolicy

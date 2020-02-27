@@ -1,0 +1,44 @@
+type: array
+items:
+  ## FIXME totally incomplete!
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+      example: 91252ea2-feb2-412d-8599-c6945fee02c4
+      description: Directive id
+    displayName:
+      type: string
+      example: 91252ea2-feb2-412d-8599-c6945fee02c4
+      description: Human readable name of the directive
+    shortDescription:
+      type: string
+      example: 91252ea2-feb2-412d-8599-c6945fee02c4
+      description: One line directive description
+    longDescription:
+      type: string
+      format: markdown
+      example: >-
+        # TODO
+
+
+        * [Ticket link](https://tickets.example.com/issues/3456)
+      description: Description of the technique (rendered as markdown)
+    techniqueName:
+      type: string
+      example: 91252ea2-feb2-412d-8599-c6945fee02c4
+      description: Directive id
+    techniqueVersion:
+      type: string
+      example: 91252ea2-feb2-412d-8599-c6945fee02c4
+      description: Directive id
+    priority:
+      type: integer
+      description: Directive priority. `0` has highest priority.
+      example: 5
+      minimum: 0
+      maximum: 10
+    #enabled:
+    #system:
+    #parameters:

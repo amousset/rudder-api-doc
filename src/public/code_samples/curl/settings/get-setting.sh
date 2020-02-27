@@ -1,0 +1,1 @@
+curl -H "X-API-Token: yourToken" https://rudder.example.com/rudder/api/latest/settings/run_frequency

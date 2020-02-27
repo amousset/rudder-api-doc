@@ -18,12 +18,15 @@ get:
                   - error
               action:
                 type: string
-                description: The operationId if the action
+                description: The operationId of the action
                 enum:
                   - getStatus
               data:
                 type: object
                 description: Status of the service
+                required:
+                  - database
+                  - configuration
                 properties:
                   database:
                     required:

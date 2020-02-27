@@ -1,0 +1,1 @@
+curl -H "X-API-Token: yourToken" -X DELETE http://rudder.example.com/rudder/api/latest/datasources/DataSourceID
